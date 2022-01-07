@@ -1,4 +1,5 @@
 #Importing the dependencies
+#Importing the dependencies
 import joblib
 import streamlit as st
 import streamlit_authenticator as stauth
@@ -6,16 +7,11 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
-from sklearn.metrics import confusion_matrix
-from sklearn.neighbors import KNeighborsClassifier
-import lightgbm as lgb
 import pickle
 import time
+import lightgbm as lgb
 import datetime as dt
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 import os
-import pymongo
 import urllib.parse
 import random as rnd
 from io import BytesIO
@@ -23,9 +19,9 @@ from pyxlsb import open_workbook as open_xlsb
 import xlsxwriter
 
 
-names = os.environ.get(AUTH_NAMES)
-usernames=os.environ.get(AUTH_USERNAMES)
-password=os.environ.get(AUTH_PASSWORDS)
+names = st.secrets['AUTH_NAMES']
+usernames=st.secrets['AUTH_USERNAMES']
+passwords=st.secrets["AUTH_PASSWORDS"]
 
 hashed_passwords = stauth.hasher(passwords).generate()
 #---------STREAMLIT------------
