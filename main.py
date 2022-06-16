@@ -23,7 +23,7 @@ names = st.secrets['AUTH_NAMES']
 usernames=st.secrets['AUTH_USERNAMES']
 passwords=st.secrets["AUTH_PASSWORDS"]
 
-hashed_passwords = stauth.hasher(passwords).generate()
+hashed_passwords = stauth.Hasher(passwords).generate()
 #---------STREAMLIT------------
 authenticator = stauth.authenticate(names,usernames,hashed_passwords,
     'some_cookie_name','some_signature_key',cookie_expiry_days=30)
