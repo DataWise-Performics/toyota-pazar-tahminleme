@@ -25,7 +25,7 @@ passwords=st.secrets["AUTH_PASSWORDS"]
 
 hashed_passwords = stauth.Hasher(passwords).generate()
 #---------STREAMLIT------------
-authenticator = stauth.authenticate(names,usernames,hashed_passwords,
+authenticator = stauth.Authenticate(names,usernames,hashed_passwords,
     'some_cookie_name','some_signature_key',cookie_expiry_days=30)
 name, authentication_status = authenticator.login('Pazar Tahminleme Giriş','main')
 if authentication_status:
