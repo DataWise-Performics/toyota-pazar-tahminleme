@@ -43,8 +43,10 @@ if authentication_status:
         guven_endeksi=st.sidebar.text_input('Tüketici Güven Endeksi') #Tüketici Güven Endeksi input
         enflasyon=st.sidebar.text_input('Aylık Enflasyon') #Aylık Enflasyon
         tufe=st.sidebar.text_input('TÜFE') #TÜFE Endeksi
+        asgari=st.sidebar.text_input('Asgari Ücret') #Asgari Ücret
+        benzin=st.sidebar.text_input('Benzin') #Benzinin Fiyatı
         ay=st.sidebar.text_input('Ay') #Ay
-        yil=st.sidebar.text_input('Yıl') #Ay
+        yil=st.sidebar.text_input('Yıl') #Yıl
 
         sezonsallik = [-8336.58446876, -5422.31128824, 333.7142071, -622.93622349,
                        798.52677185, -104.26254763, -1205.4341307, -718.23560128,
@@ -72,7 +74,7 @@ if authentication_status:
         if st.sidebar.button('Tahmin Et'):
             try:
                 sezonsallik_endeksi = sezonsallik[int(ay)-1]
-                pc_prediction=pc_model.predict(pc_scaler.transform([[faiz,calisma_gunu,guven_endeksi,enflasyon,tufe,ay]]))[0]
+                pc_prediction=pc_model.predict(pc_scaler.transform([[faiz,calisma_gunu,guven_endeksi,enflasyon,tufe,ay,asgari/benzin]]))[0]
                 lcv_prediction = lcv_model.predict(
                     lcv_scaler.transform([[faiz, sezonsallik_endeksi, calisma_gunu, guven_endeksi, enflasyon, tufe, ay]]))[0]
                 st.subheader(f'{yil} {ay_dict[ay]} Binek Araçları Pazarı Tahmini: {int(pc_prediction):,}')
