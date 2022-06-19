@@ -43,11 +43,9 @@ if authentication_status:
         guven_endeksi=st.sidebar.text_input('Tüketici Güven Endeksi') #Tüketici Güven Endeksi input
         enflasyon=st.sidebar.text_input('Aylık Enflasyon') #Aylık Enflasyon
         tufe=st.sidebar.text_input('TÜFE') #TÜFE Endeksi
-        asgari=st.sidebar.text_input('Asgari Ücret') #Asgari Ücret
-        benzin=st.sidebar.text_input('Benzin') #Benzinin Fiyatı
+        asgari_benzin=st.sidebar.text_input('Asgari Ücret/Benzin Oranı') #Asgari Ücretin Benzine Oranı
         ay=st.sidebar.text_input('Ay') #Ay
         yil=st.sidebar.text_input('Yıl') #Yıl
-        asgari_benzin=asgari/benzin
 
         sezonsallik = [-8336.58446876, -5422.31128824, 333.7142071, -622.93622349,
                        798.52677185, -104.26254763, -1205.4341307, -718.23560128,
