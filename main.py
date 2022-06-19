@@ -47,7 +47,7 @@ if authentication_status:
         benzin=st.sidebar.text_input('Benzin') #Benzinin Fiyatı
         ay=st.sidebar.text_input('Ay') #Ay
         yil=st.sidebar.text_input('Yıl') #Yıl
-        asgari_benzin=float(asgari)/float(benzin)
+        asgari_benzin=asgari/benzin
 
         sezonsallik = [-8336.58446876, -5422.31128824, 333.7142071, -622.93622349,
                        798.52677185, -104.26254763, -1205.4341307, -718.23560128,
